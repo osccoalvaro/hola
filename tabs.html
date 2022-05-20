@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab_box">
+            <button class="tab_btn active">Home</button>
+            <button class="tab_btn">Propuesta Educativa</button>
+            <button class="tab_btn">Primaria</button>
+            <button class="tab_btn">Home</button>
+            <div class="line"></div>
+        </div>
+        <div class="content_box">
+            <div class="content active">
+                <h2>Home</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis optio ducimus eos esse quis recusandae, est magni ut reprehenderit dolor eius in, nesciunt minima dolorem dicta molestias unde. Consequatur, distinctio!</p>
+            </div>
+
+            <div class="content">
+                <h2>Propuesta Educativa</h2>
+                <p>En la plataforma se revisan los contenidos trabajados en clase y el padre de familia puede mantenerse al tanto del rendimiento académico de su hijo.</p>
+                <img src="img/3.svg" alt="">
+            </div>
+            <div class="content">
+                <h2>Home3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis optio ducimus eos esse quis recusandae, est magni ut reprehenderit dolor eius in, nesciunt minima dolorem dicta molestias unde. Consequatur, distinctio!</p>
+                <img src="img/3.svg" alt="">
+            </div>
+            <div class="content">
+                <h2>Home4</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis optio ducimus eos esse quis recusandae, est magni ut reprehenderit dolor eius in, nesciunt minima dolorem dicta molestias unde. Consequatur, distinctio!</p>
+            </div>
+        </div>
+   
+
+
+    </div>    
+    
+    <script>
+        const tabs = document.querySelectorAll('.tab_btn');
+        const all_content = document.querySelectorAll('.content');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', (e) => {
+                tabs.forEach(tab => {tab.classList.remove('active')});
+                tab.classList.add('active');
+                
+               
+                var line=document.querySelector('.line');
+            line.style.width = e.target.offsetWidth + "px";
+            line.style.left = e.target.offsetLeft + "px";
+            
+            all_content.forEach(content => {content.classList.remove('active')} )
+            all_content[index].classList.add('active');
+
+            })
+
+
+
+            
+        })    
+    </script>
+
+</body>
+</html>
